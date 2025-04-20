@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تم فتح باب التعيين</title>
-  <meta content="https://i.imgur.com/Psz9qeX.jpg" name="og:image"/>
-  <link href="https://i.imgur.com/Psz9qeX.jpg" rel="shortcut icon"/>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>التقديم على الوظائف</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap');
+
     * {
       margin: 0;
       padding: 0;
@@ -17,214 +15,198 @@
 
     body {
       font-family: 'Cairo', sans-serif;
-      background: url('https://i.imgur.com/swG8JuI.jpg') no-repeat center center fixed;
+      background: url('https://i.imgur.com/0vPqb20.jpg') no-repeat center center fixed;
       background-size: cover;
-      color: #fff;
-      direction: rtl;
-      overflow-x: hidden;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      padding: 20px;
+      direction: rtl;
     }
 
-    h1, h2, h3, h4 {
-      font-weight: 400;
+    .container {
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 12px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      padding: 30px;
+      transition: all 0.3s ease;
+      animation: slideIn 0.6s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
 
     h2 {
-      font-size: 1.5em;
       text-align: center;
-      margin: 10px 0;
-    }
-
-    a {
-      text-decoration: none;
-      color: #fff;
-      font-weight: bold;
-      padding: 10px 20px;
-      background-color: #ff5e00;
-      border-radius: 5px;
-      display: inline-block;
-      transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-
-    a:hover {
-      background-color: #ff3c00;
-      transform: scale(1.1);
-    }
-
-    #wrapper {
-      width: 100%;
-      max-width: 600px;
-      text-align: center;
-      padding: 20px;
-    }
-
-    #questionWrapper {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 20px;
-      border-radius: 15px;
-      text-align: center;
-    }
-
-    #intro {
-      margin: 20px 0;
-    }
-
-    #intro img {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 15px;
+      color: #2c3e50;
       margin-bottom: 20px;
+      font-weight: 600;
+      font-size: 1.6em;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    }
+
+    p {
+      text-align: center;
+      color: #444;
+      margin-bottom: 20px;
+      font-size: 1.2em;
     }
 
     .question {
       display: none;
-      margin-top: 20px;
+      animation: fadeIn 0.5s ease;
     }
 
-    .answer {
-      background-color: #ff5e00;
+    .question.active {
+      display: block;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      background-color: #007bff;
       color: white;
-      border-radius: 5px;
-      padding: 10px 20px;
-      font-size: 16px;
+      padding: 12px;
       margin: 10px 0;
-      display: inline-block;
-      width: 80%;
-      max-width: 400px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
       cursor: pointer;
       transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
-    .answer:hover {
-      background-color: #ff3c00;
+    .btn:hover {
+      background-color: #0056b3;
       transform: scale(1.05);
     }
 
-    .center {
-      text-align: center;
+    .btn:active {
+      transform: scale(0.98);
     }
 
-    .center img {
-      border-radius: 10px;
-      max-width: 100%;
-      height: auto;
+    .btn:focus {
+      outline: none;
     }
 
-    .waiting-message {
-      display: none;
-      background-color: #ff9800;
-      color: white;
-      padding: 15px;
-      border-radius: 10px;
-      margin-top: 20px;
-      font-size: 18px;
-    }
-
-    @media (max-width: 768px) {
-      #questionWrapper {
-        width: 95%;
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
 
     @media (max-width: 480px) {
-      h2 {
-        font-size: 14px;
+      .container {
+        padding: 20px;
       }
 
-      .answer {
-        width: 90%;
+      .btn {
+        font-size: 14px;
+        padding: 10px;
       }
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <div id="intro" class="question active">
+      <h2>مرحبًا بك في بوابة التوظيف</h2>
+      <p>نحن نبحث عن أفراد جادين للانضمام لفريق العمل. لا يشترط الخبرة. فقط أجب على الأسئلة التالية:</p>
+      <button class="btn" data-next="q1">ابدأ الآن</button>
+    </div>
 
-  <div id="wrapper">
-    <!-- Main Content Section -->
-    <div id="questionWrapper">
-      <div id="intro">
-        <img src="https://i.imgur.com/Psz9qeX.jpg" alt="بوستر إعلاني" class="center">
-        <p><b>شركات السعودية</b><br> تم فتح باب التعيين لا يشترط الخبرة. للحصول على وظيفتك الخاصة ما عليك سوى الإجابة عن الأسئلة التالية:</p>
-      </div>
+    <div id="q1" class="question">
+      <h2>هل أنت مستعد للبدء؟</h2>
+      <button class="btn" data-next="q2">نعم</button>
+    </div>
 
-      <!-- Question 1 -->
-      <div class="question question1" style="display: block;">
-        <h2>هل انت جاهز للبدء ؟</h2>
-        <div class="answer" data-next=".question2" style="background-color: #ff5733;">نعم</div>
-      </div>
+    <div id="q2" class="question">
+      <h2>ما هو جنسك؟</h2>
+      <button class="btn" data-next="q3">ذكر</button>
+      <button class="btn" data-next="q3">أنثى</button>
+    </div>
 
-      <!-- Question 2 -->
-      <div class="question question2">
-        <h2>هل انت جاهز للبدء ؟</h2>
-        <div class="answer" data-next=".question3" style="background-color: #33c1ff;">نعم</div>
-        <div class="answer" data-next=".question3" style="background-color: #c133ff;">لا</div>
-      </div>
+    <div id="q3" class="question">
+      <h2>ما هو فئتك العمرية؟</h2>
+      <button class="btn" data-next="q4">من 18 لـ 25</button>
+      <button class="btn" data-next="q4">من 26 لـ 35</button>
+      <button class="btn" data-next="q4">من 36 لـ 45</button>
+      <button class="btn" data-next="q4">أكثر من 45</button>
+    </div>
 
-      <!-- Question 3 -->
-      <div class="question question3">
-        <h2>حدد جنسك</h2>
-        <div class="answer" data-next=".question4" style="background-color: #8e44ad;">ذكر</div>
-        <div class="answer" data-next=".question4" style="background-color: #f39c12;">أنثى</div>
-      </div>
+    <div id="q4" class="question">
+      <h2>هل لديك خبرة سابقة في المجال؟</h2>
+      <button class="btn" data-next="q5">نعم</button>
+      <button class="btn" data-next="q5">لا</button>
+    </div>
 
-      <!-- Question 4 -->
-      <div class="question question4">
-        <h2>حدد السن الخاص بك</h2>
-        <div class="answer" data-next=".question5" style="background-color: #16a085;">من 18 لـ 25</div>
-        <div class="answer" data-next=".question5" style="background-color: #f1c40f;">من 26 لـ 35</div>
-        <div class="answer" data-next=".question5" style="background-color: #d35400;">من 36 لـ 45</div>
-        <div class="answer" data-next=".question5" style="background-color: #2980b9;">من 46 لـ 60</div>
-        <div class="answer" data-next=".question5" style="background-color: #e74c3c;">آخر</div>
-      </div>
+    <div id="q5" class="question">
+      <h2>هل تفضل العمل بدوام كامل أم جزئي؟</h2>
+      <button class="btn" data-next="q6">دوام كامل</button>
+      <button class="btn" data-next="q6">دوام جزئي</button>
+    </div>
 
-      <!-- Question 5 -->
-      <div class="question question5">
-        <h2>اختر الوظيفة المناسبة لك</h2>
-        <div class="answer" data-next=".question6" style="background-color: #1abc9c;">سواق</div>
-        <div class="answer" data-next=".question6" style="background-color: #9b59b6;">عامل نظافة</div>
-        <div class="answer" data-next=".question6" style="background-color: #e67e22;">محاسب</div>
-        <div class="answer" data-next=".question6" style="background-color: #2ecc71;">سائق معدات</div>
-        <div class="answer" data-next=".question6" style="background-color: #3498db;">عمال سباكة</div>
-        <div class="answer" data-next=".question6" style="background-color: #f39c12;">مبلط سيراميك</div>
-        <div class="answer" data-next=".question6" style="background-color: #34495e;">موظفات مكتب الاستقبال</div>
-        <div class="answer" data-next=".question6" style="background-color: #1abc9c;">ميكانيكي</div>
-        <div class="answer" data-next=".question6" style="background-color: #16a085;">سائق بلدوزر</div>
-        <div class="answer" data-next=".question6" style="background-color: #9b59b6;">نادلات</div>
-        <div class="answer" data-next=".question6" style="background-color: #f1c40f;">عمال بناء</div>
-      </div>
+    <div id="q6" class="question">
+      <h2>ما الوظيفة التي تناسبك؟</h2>
+      <button class="btn" data-next="q7">محاسب</button>
+      <button class="btn" data-next="q7">سائق</button>
+      <button class="btn" data-next="q7">عمال بناء</button>
+      <button class="btn" data-next="q7">موظف استقبال</button>
+      <button class="btn" data-next="q7">مهندس</button>
+      <button class="btn" data-next="q7">مدير مشروع</button>
+      <button class="btn" data-next="q7">مساعد إداري</button>
+      <button class="btn" data-next="q7">نجار</button>
+      <button class="btn" data-next="q7">سباك</button>
+      <button class="btn" data-next="q7">حداد</button>
+      <button class="btn" data-next="q7">فني كهرباء</button>
+      <button class="btn" data-next="q7">مساعد فني</button>
+      <button class="btn" data-next="q7">فني تبريد وتكييف</button>
+      <button class="btn" data-next="q7">مزارع</button>
+      <button class="btn" data-next="q7">عامل مطبخ</button>
+      <button class="btn" data-next="q7">وظيفة أخرى</button>
+    </div>
 
-      <!-- Phone Registration at the End -->
-      <div class="question question6">
-        <h2>برجاء التسجيل برقم الهاتف ليتم التواصل</h2>
-        <div class="answer" id="phone-register-button" style="background-color: #e74c3c;">سجل برقم هاتفك الآن</div>
-      </div>
+    <div id="q7" class="question">
+      <h2>إذا كانت الوظيفة التي ترغب فيها غير موجودة، يرجى كتابتها هنا:</h2>
+      <input type="text" id="other-job" placeholder="أدخل الوظيفة هنا" class="btn" style="width: 100%; padding: 12px; margin-bottom: 20px;" />
+      <button class="btn" data-next="q8">تأكيد</button>
+    </div>
 
+    <div id="q8" class="question">
+      <h2>الخطوة الأخيرة</h2>
+      <p>برجاء التسجيل برقم الهاتف ليتم التواصل معك.</p>
+      <button class="btn" onclick="window.location.href='https://smrturl.co/a/sa7af109433/4464?s1='">سجل برقمك الآن</button>
     </div>
   </div>
 
   <script>
-    // jQuery for question logic
-    document.querySelectorAll('.answer').forEach(function(button) {
-      button.addEventListener('click', function() {
-        var nextQuestionClass = button.getAttribute('data-next');
-        var currentQuestion = button.closest('.question');
-        var nextQuestion = document.querySelector(nextQuestionClass);
-        
-        if (nextQuestion) {
-          currentQuestion.style.display = 'none';
-          nextQuestion.style.display = 'block';
-        }
-
-        // Redirect to phone registration page on specific button click
-        if (button.id === 'phone-register-button') {
-          window.location.href = "https://smrturl.co/a/sa7af109433/4464?s1=";
+    const buttons = document.querySelectorAll(".btn[data-next]");
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const current = btn.closest(".question");
+        const nextId = btn.getAttribute("data-next");
+        const next = document.getElementById(nextId);
+        if (current && next) {
+          current.classList.remove("active");
+          next.classList.add("active");
         }
       });
     });
   </script>
-
 </body>
 </html>
