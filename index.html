@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>التقديم على الوظائف</title>
   <style>
     body {
@@ -10,130 +10,67 @@
       background: url('https://i.imgur.com/0vPqb20.jpg') no-repeat center center fixed;
       background-size: cover;
       height: 100vh;
+      margin: 0;
+      direction: rtl;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 0;
-      direction: rtl;
+      padding: 20px;
     }
-
-    .form-container {
+    .container {
       background-color: rgba(255, 255, 255, 0.9);
       border-radius: 12px;
-      padding: 30px;
-      width: 100%;
+      padding: 30px 20px;
       max-width: 400px;
-      box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
       text-align: center;
     }
-
     h2 {
       color: #2c3e50;
-      margin-bottom: 20px;
-      font-size: 1.6em;
+      margin-bottom: 25px;
+      font-size: 1.8em;
     }
-
     .btn {
       width: 100%;
       padding: 15px;
-      background-color: #007bff;
-      color: white;
+      margin: 10px 0;
       font-size: 18px;
       border: none;
       border-radius: 8px;
-      margin-top: 10px;
+      background-color: #007bff;
+      color: white;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: background-color 0.3s ease;
     }
-
     .btn:hover {
       background-color: #0056b3;
     }
-
     .btn:focus {
       outline: none;
-    }
-
-    select {
-      width: 100%;
-      padding: 12px;
-      font-size: 18px;
-      margin-top: 15px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-    }
-
-    .message {
-      font-size: 16px;
-      color: #333;
-      margin-top: 20px;
     }
   </style>
 </head>
 <body>
 
-  <div class="form-container">
-    <h2>التقديم على الوظائف</h2>
-
-    <!-- اختيار الوظيفة -->
-    <label for="job">اختار الوظيفة التي ترغب في التقديم لها:</label>
-    <select id="job">
-      <option value="محاسب">محاسب</option>
-      <option value="سائق">سائق</option>
-      <option value="نجار">نجار</option>
-      <option value="سباك">سباك</option>
-      <option value="حداد">حداد</option>
-      <option value="طباخ">طباخ</option>
-      <option value="ممرض">ممرض</option>
-      <option value="عامل تنظيف">عامل تنظيف</option>
-      <option value="مطور ويب">مطور ويب</option>
-      <option value="وظيفة أخرى">وظيفة أخرى</option>
-    </select>
-
-    <!-- حقل وظيفة أخرى -->
-    <div id="other-job" style="display: none;">
-      <input type="text" placeholder="ادخل الوظيفة المطلوبة" />
-    </div>
-
-    <!-- زر التسجيل -->
-    <button class="btn" id="submit">تسجيل</button>
-
-    <div class="message" id="success-message" style="display:none;">
-      تم التسجيل بنجاح، سيتم التوجيه إلى الموقع.
-    </div>
-
-    <div class="message" id="note-message">
-      <p><strong>ملاحظة:</strong> للتواصل معك يجب التسجيل عبر الموقع باستخدام رقم الهاتف.</p>
-    </div>
+  <div class="container">
+    <h2>اختر الوظيفة سوف يتم تحويلك للتسجيل برقم هاتفك ليتم التواصل </h2>
+    <button class="btn" onclick="goToSite()">محاسب</button>
+    <button class="btn" onclick="goToSite()">سائق</button>
+    <button class="btn" onclick="goToSite()">نجار</button>
+    <button class="btn" onclick="goToSite()">سباك</button>
+    <button class="btn" onclick="goToSite()">حداد</button>
+    <button class="btn" onclick="goToSite()">طباخ</button>
+    <button class="btn" onclick="goToSite()">ممرض</button>
+    <button class="btn" onclick="goToSite()">عامل تنظيف</button>
+    <button class="btn" onclick="goToSite()">مطور ويب</button>
+    <button class="btn" onclick="goToSite()">وظيفة أخرى</button>
   </div>
 
   <script>
-    document.getElementById('job').addEventListener('change', function() {
-      if (this.value === 'وظيفة أخرى') {
-        document.getElementById('other-job').style.display = 'block';
-      } else {
-        document.getElementById('other-job').style.display = 'none';
-      }
-    });
-
-    document.getElementById('submit').addEventListener('click', function() {
-      const job = document.getElementById('job').value;
-      const otherJob = document.querySelector('#other-job input').value;
-
-      // في حالة كانت الوظيفة "أخرى"
-      const finalJob = job === 'وظيفة أخرى' ? otherJob : job;
-
-      // إظهار رسالة النجاح
-      document.getElementById('success-message').style.display = 'block';
-
-      // توجيه المستخدم إلى الموقع بعد التسجيل
-      setTimeout(function() {
-        window.location.href = "https://smrturl.co/a/sa7af109433/12011?s1="; // الرابط المقدم
-      }, 2000); // الانتظار 2 ثانية قبل التوجيه
-
-      // يمكن إضافة أي إجراءات أخرى هنا مثل إرسال البيانات عبر API أو تخزينها.
-      console.log('تم التسجيل بنجاح في الوظيفة:', finalJob);
-    });
+    function goToSite() {
+      window.location.href = "https://smrturl.co/a/sa7af109433/12011?s1=";
+    }
   </script>
 
 </body>
