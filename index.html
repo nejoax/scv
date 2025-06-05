@@ -2,88 +2,111 @@
 <html lang="ar">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>وظائف مطلوبة في السعودية</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>التقديم على وظيفة</title>
   <style>
     body {
       font-family: 'Cairo', sans-serif;
       background: url('https://i.imgur.com/0vPqb20.jpg') no-repeat center center fixed;
       background-size: cover;
-      height: 100vh;
       margin: 0;
+      padding: 0;
       direction: rtl;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px;
+      height: 100vh;
     }
+
     .container {
       background-color: rgba(255, 255, 255, 0.95);
+      padding: 30px;
       border-radius: 12px;
-      padding: 30px 20px;
-      max-height: 90vh;
-      overflow-y: auto;
-      max-width: 500px;
-      width: 100%;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
       text-align: center;
+      max-width: 400px;
+      width: 100%;
     }
+
     h2 {
       color: #2c3e50;
       margin-bottom: 20px;
-      font-size: 1.6em;
     }
-    .btn {
+
+    .btn, select {
       width: 100%;
       padding: 14px;
-      margin: 7px 0;
-      font-size: 17px;
-      border: none;
+      font-size: 16px;
+      margin: 10px 0;
       border-radius: 8px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn {
       background-color: #007bff;
       color: white;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: background 0.3s;
     }
+
     .btn:hover {
       background-color: #0056b3;
     }
-    .btn:focus {
-      outline: none;
+
+    select {
+      border: 1px solid #ccc;
+      display: none;
+    }
+
+    #register {
+      display: none;
     }
   </style>
 </head>
 <body>
 
   <div class="container">
-    <h2>اختر الوظيفة المطلوبة وقم بالتسجيل برقم الهاتف ليتم التواصل </h2>
+    <h2>التقديم على وظيفة في السعودية</h2>
 
-    <button class="btn" onclick="goToSite()">سائق نقل ثقيل</button>
-    <button class="btn" onclick="goToSite()">فني كهرباء</button>
-    <button class="btn" onclick="goToSite()">فني تبريد وتكييف</button>
-    <button class="btn" onclick="goToSite()">نجار</button>
-    <button class="btn" onclick="goToSite()">سباك</button>
-    <button class="btn" onclick="goToSite()">حداد</button>
-    <button class="btn" onclick="goToSite()">عامل مستودع</button>
-    <button class="btn" onclick="goToSite()">عامل بناء</button>
-    <button class="btn" onclick="goToSite()">مندوب توصيل</button>
-    <button class="btn" onclick="goToSite()">عامل نظافة</button>
-    <button class="btn" onclick="goToSite()">مشرف عمال</button>
-    <button class="btn" onclick="goToSite()">حارس أمن</button>
-    <button class="btn" onclick="goToSite()">طباخ</button>
-    <button class="btn" onclick="goToSite()">مساعد طباخ</button>
-    <button class="btn" onclick="goToSite()">ميكانيكي سيارات</button>
-    <button class="btn" onclick="goToSite()">كهربائي سيارات</button>
-    <button class="btn" onclick="goToSite()">موظف شحن وتفريغ</button>
-    <button class="btn" onclick="goToSite()">عامل مغسلة سيارات</button>
-    <button class="btn" onclick="goToSite()">فني صيانة عامة</button>
-    <button class="btn" onclick="goToSite()">عامل مزرعة</button>
+    <!-- زر عرض قائمة الوظائف -->
+    <button class="btn" onclick="showJobs()">اختر الوظيفة</button>
 
-    <button class="btn" onclick="goToSite()">وظيفة أخرى</button>
+    <!-- قائمة الوظائف -->
+    <select id="jobList" onchange="enableRegister()">
+      <option value="">-- اختر الوظيفة --</option>
+      <option value="سائق نقل ثقيل">سائق نقل ثقيل</option>
+      <option value="عامل بناء">عامل بناء</option>
+      <option value="فني كهرباء">فني كهرباء</option>
+      <option value="سباك">سباك</option>
+      <option value="عامل مستودع">عامل مستودع</option>
+      <option value="طباخ">طباخ</option>
+      <option value="عامل نظافة">عامل نظافة</option>
+      <option value="ميكانيكي سيارات">ميكانيكي سيارات</option>
+      <option value="حارس أمن">حارس أمن</option>
+      <option value="مندوب توصيل">مندوب توصيل</option>
+      <option value="وظيفة أخرى">وظيفة أخرى</option>
+    </select>
+
+    <!-- زر التسجيل -->
+    <button class="btn" id="register" onclick="register()">سجل برقم هاتفك الآن</button>
   </div>
 
   <script>
-    function goToSite() {
+    function showJobs() {
+      document.getElementById("jobList").style.display = "block";
+    }
+
+    function enableRegister() {
+      const job = document.getElementById("jobList").value;
+      if (job !== "") {
+        document.getElementById("register").style.display = "block";
+      } else {
+        document.getElementById("register").style.display = "none";
+      }
+    }
+
+    function register() {
+      // تحويل للرابط
       window.location.href = "https://smrturl.co/a/sa7af109433/12011?s1=";
     }
   </script>
