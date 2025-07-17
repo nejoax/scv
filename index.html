@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="سجّل الآن للحصول على وظيفة مناسبة لك في السعودية. أكثر من 12,000 شخص سجّلوا خلال هذا الشهر.">
-  <title>سجّل الآن للحصول على وظيفة في السعودية</title>
+  <title>فرص عمل في السعودية</title>
+  <meta name="description" content="سجّل الآن للحصول على وظيفة مناسبة لك في السعودية. وظائف متعددة متاحة حالياً.">
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap');
@@ -12,96 +12,70 @@
       margin: 0;
       padding: 0;
       font-family: 'Cairo', sans-serif;
-      background: #f9f9f9;
+      background: #f3f3f3;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
+    }
+    .container {
+      background: #fff;
+      padding: 24px;
+      border-radius: 16px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       text-align: center;
     }
-    .wrapper {
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 24px 16px;
-      width: 95%;
-      max-width: 420px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      animation: fadeIn 0.8s ease-in-out;
-    }
     h1 {
+      font-size: 20px;
       color: #2e7d32;
-      font-size: 22px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     p {
+      font-size: 14px;
       color: #333;
-      font-size: 15px;
-      margin-bottom: 16px;
-      line-height: 1.6;
+      margin-bottom: 20px;
     }
-    .btn-group {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .job-btn {
-      background: linear-gradient(to right, #66bb6a, #43a047);
+    a.job-btn {
+      display: block;
+      background: #4caf50;
       color: white;
-      padding: 13px;
-      border: none;
+      padding: 12px;
+      margin: 8px 0;
       border-radius: 10px;
-      font-size: 15px;
-      font-weight: bold;
       text-decoration: none;
-      transition: all 0.2s ease;
+      font-weight: bold;
+      transition: background 0.2s ease;
     }
-    .job-btn:hover {
-      background: linear-gradient(to right, #43a047, #388e3c);
-      transform: scale(1.02);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    a.job-btn:hover {
+      background: #388e3c;
     }
-    .job-btn.special {
-      background: linear-gradient(to right, #ff8a65, #ff5722);
+    a.job-btn.special {
+      background: #ff5722;
     }
     footer {
+      font-size: 12px;
+      color: #888;
       margin-top: 20px;
-      font-size: 13px;
-      color: #777;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @media (max-width: 400px) {
-      h1 { font-size: 20px; }
-      .job-btn { font-size: 14px; padding: 12px; }
     }
   </style>
 </head>
 <body>
 
-  <div class="wrapper">
-    <h1>سجّل الآن للحصول على وظيفة في السعودية</h1>
-    <p><strong>اختر نوع الوظيفة واضغط للتقديم مباشرة:</strong></p>
+  <div class="container">
+    <h1>وظائف متاحة الآن في السعودية</h1>
+    <p>اختر الوظيفة المناسبة واضغط للتقديم</p>
 
-    <div class="btn-group">
-      <a href="https://smrturl.co/a/sa7af109433/1867?s1=najjar" class="job-btn">نجار</a>
-      <a href="https://smrturl.co/a/sa7af109433/1867?s1=sabbak" class="job-btn">سباك</a>
-      <a href="https://smrturl.co/a/sa7af109433/1867?s1=kahraba" class="job-btn">كهربائي</a>
-      <a href="https://smrturl.co/a/sa7af109433/1867?s1=benaa" class="job-btn">عامل بناء</a>
-      <a href="https://smrturl.co/a/sa7af109433/1867?s1=driver" class="job-btn">سائق خاص</a>
-      <a href="https://smrturl.co/a/sa7af109433/1867?s1=truck" class="job-btn">سائق نقل ثقيل</a>
-      <a href="https://smrturl.co/a/sa7af109433/1867?s1=warehouse" class="job-btn">عامل مستودع</a>
-      <a href="https://smrturl.co/a/sa7af109433/1867?s1=carwash" class="job-btn">عامل مغسلة سيارات</a>
-      <a href="https://smrturl.co/a/sa7af109433/1867?s1=cleaning" class="job-btn">عامل نظافة</a>
-      <a href="https://smrturl.co/a/sa7af109433/10715?s1=other" class="job-btn special">أبحث عن وظيفة أخرى</a>
-    </div>
+    <a href="https://smrturl.co/a/sa7af109433/1867?s1=najjar" class="job-btn">نجار</a>
+    <a href="https://smrturl.co/a/sa7af109433/1867?s1=sabbak" class="job-btn">سباك</a>
+    <a href="https://smrturl.co/a/sa7af109433/1867?s1=kahraba" class="job-btn">كهربائي</a>
+    <a href="https://smrturl.co/a/sa7af109433/1867?s1=benaa" class="job-btn">عامل بناء</a>
+    <a href="https://smrturl.co/a/sa7af109433/1867?s1=driver" class="job-btn">سائق خاص</a>
+    <a href="https://smrturl.co/a/sa7af109433/1867?s1=cleaning" class="job-btn">عامل نظافة</a>
+    <a href="https://smrturl.co/a/sa7af109433/10715?s1=other" class="job-btn special">أبحث عن وظيفة أخرى</a>
 
-    <p style="font-size: 14px; color: #2e7d32; margin-top: 18px;"><strong>أكثر من 12,000 شخص سجّلوا خلال هذا الشهر!</strong></p>
-
-    <footer>
-      جميع الفرص متاحة حسب احتياج الشركاء – سيتم التواصل عند توفر الوظائف المناسبة
-    </footer>
+    <footer>سيتم التواصل معك عند توفر وظيفة مناسبة – الفرص محدودة</footer>
   </div>
 
 </body>
