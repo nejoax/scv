@@ -2,95 +2,165 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>وظائف في السعودية 2025</title>
-  <meta name="description" content="سجّل للحصول على وظيفة برواتب مجزية مع توفير السكن والإقامة والفيزا مجانًا.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>وظائف حكومية للسعوديين</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
     body {
-      margin: 0;
       font-family: 'Tahoma', sans-serif;
-      background: #f0f2f5;
-      color: #333;
+      background: linear-gradient(to bottom, #f3f4f6, #e0f2f1);
+      margin: 0;
+      padding: 0;
+      color: #111827;
+      transition: all 0.3s ease-in-out;
     }
     .container {
-      max-width: 600px;
+      max-width: 620px;
       margin: auto;
-      padding: 20px;
       background: #fff;
+      padding: 24px;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
       margin-top: 40px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      animation: fadeIn 1s ease;
+      transition: transform 0.3s ease;
+    }
+    .container:hover {
+      transform: scale(1.01);
     }
     h1 {
+      color: #047857;
+      font-size: 28px;
+      margin-bottom: 10px;
       text-align: center;
-      color: #2e7d32;
-      font-size: 24px;
-      margin-bottom: 15px;
     }
-    p {
-      text-align: center;
+    p, .disclaimer {
       font-size: 16px;
-      margin-bottom: 25px;
+      margin: 10px 0;
+      text-align: center;
     }
-    .job-btn {
+    .highlight {
+      color: #b91c1c;
+      font-weight: bold;
+    }
+    .countdown {
+      background: #fef3c7;
+      padding: 12px;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 18px;
+      margin: 20px 0;
+      color: #92400e;
+    }
+    .cta-btn {
       display: block;
       width: 100%;
-      padding: 14px;
-      margin: 10px 0;
-      background: linear-gradient(to right, #4caf50, #2e7d32);
+      padding: 16px;
+      background-color: #047857;
       color: white;
-      text-decoration: none;
+      text-align: center;
+      font-size: 20px;
       font-weight: bold;
-      border-radius: 10px;
-      text-align: center;
-      transition: transform 0.2s, box-shadow 0.2s;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s, transform 0.2s;
+      margin-top: 10px;
     }
-    .job-btn:hover {
-      transform: scale(1.02);
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    .cta-btn:hover {
+      background-color: #065f46;
+      transform: translateY(-2px);
     }
-    footer {
+    .comments {
       margin-top: 30px;
-      text-align: center;
+    }
+    .comment {
+      display: flex;
+      align-items: flex-start;
+      background: #f9fafb;
+      padding: 12px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .comment img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      margin-left: 12px;
+    }
+    .comment-body {
+      font-size: 15px;
+    }
+    .comment-body strong {
+      color: #111827;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .disclaimer {
       font-size: 13px;
-      color: #777;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @media (max-width: 600px) {
-      h1 { font-size: 20px; }
-      .job-btn { font-size: 15px; padding: 12px; }
+      color: #6b7280;
+      margin-top: 25px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>عاجل - وظائف شاغرة في السعودية 🇸🇦</h1>
-    <p>تُعلن شركات سعودية عن حاجتها لتوظيف عدد من العمال برواتب مجزية وسكن وڤيزا مجانية.</p>
+    <h1>📢 وظائف حكومية للسعوديين 2025</h1>
+    <p>فرص عمل برواتب تبدأ من <strong>3,500 ريال سعودي</strong> متاحة الآن للرجال فقط.</p>
+    <p class="highlight">للتأكيد، يجب التسجيل باستخدام رقم الجوال لاستلام كود التحقق.</p>
+    <div class="countdown">عدد المتقدمين اليوم: <span id="timer">00:20</span></div>
+    <a href="https://smrturl.co/a/sa7af109433/4464?s1=fb_landing" class="cta-btn" target="_blank">🔒 اضغط هنا للتسجيل باستخدام رقم الجوال</a>
 
-    <!-- الروابط -->
-    <a href="https://smrturl.co/a/sa7af109433/4464?s1=driver" class="job-btn">سائق خاص</a>
-    <a href="https://smrturl.co/a/sa7af109433/4464?s1=truck" class="job-btn">سائق نقل ثقيل</a>
-    <a href="https://smrturl.co/a/sa7af109433/4464?s1=worker" class="job-btn">عامل نظافة</a>
-    <a href="https://smrturl.co/a/sa7af109433/4464?s1=warehouse" class="job-btn">عامل مستودع</a>
-    <a href="https://smrturl.co/a/sa7af109433/4464?s1=najjar" class="job-btn">نجار</a>
-    <a href="https://smrturl.co/a/sa7af109433/4464?s1=sabbak" class="job-btn">سبّاك</a>
-    <a href="https://smrturl.co/a/sa7af109433/4464?s1=cleaning" class="job-btn">عامل تنظيف</a>
-    <a href="https://smrturl.co/a/sa7af109433/4464?s1=kahraba" class="job-btn">فني كهرباء</a>
-    <a href="https://smrturl.co/a/sa7af109433/4464?s1=delivery" class="job-btn">مندوب توصيل</a>
-    <a href="https://smrturl.co/a/sa7af109433/4464?s1=other" class="job-btn">وظائف أخرى</a>
+    <div class="comments">
+      <div class="comment">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="سامي">
+        <div class="comment-body">
+          <strong>سامي المطيري</strong>
+          قدمت أمس واستلمت الكود خلال دقيقة، طريقة التسجيل بسيطة وواضحة.
+        </div>
+      </div>
+      <div class="comment">
+        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="بدر">
+        <div class="comment-body">
+          <strong>بدر الحربي</strong>
+          أول مرة أسجل في وظيفة ويتم التواصل معي بعد ساعتين فقط، ممتاز.
+        </div>
+      </div>
+      <div class="comment">
+        <img src="https://randomuser.me/api/portraits/men/19.jpg" alt="أحمد">
+        <div class="comment-body">
+          <strong>أحمد الزهراني</strong>
+          سجلت وتم التواصل معي اليوم، شكراً لكم على الفرصة.
+        </div>
+      </div>
+      <div class="comment">
+        <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="محمد">
+        <div class="comment-body">
+          <strong>محمد القحطاني</strong>
+          العرض ممتاز وأفضل شيء إنه يشمل كل المناطق داخل السعودية.
+        </div>
+      </div>
+      <div class="comment">
+        <img src="https://randomuser.me/api/portraits/men/38.jpg" alt="عبدالله">
+        <div class="comment-body">
+          <strong>عبدالله الشهري</strong>
+          التسجيل ما أخذ مني دقيقة، وتم إرسال كود التفعيل فوراً، أنصح بالتقديم.
+        </div>
+      </div>
+    </div>
 
-    <p style="color: #2e7d32; font-size: 14px;">سجّل الآن – سيتم التواصل معك عند توفر الوظيفة المناسبة</p>
-
-    <footer>
-      إعلان رسمي للتوظيف - جميع الحقوق محفوظة © 2025  
-    </footer>
+    <div class="disclaimer">* ملاحظة: يجب إكمال خطوة التحقق عبر رقم الهاتف لتأكيد جدّية الطلب. الوظائف مخصصة للرجال فقط ومحدودة وتُقبل حسب أولوية التسجيل.</div>
   </div>
+
+  <script>
+    let time = 20;
+    const timer = document.getElementById("timer");
+    const interval = setInterval(() => {
+      time--;
+      timer.textContent = `00:${time < 10 ? '0' : ''}${time}`;
+      if (time <= 0) clearInterval(interval);
+    }, 1000);
+  </script>
 </body>
 </html>
