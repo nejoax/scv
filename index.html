@@ -110,11 +110,8 @@
     <p>فرص عمل برواتب تبدأ من <strong>3,500 ريال سعودي</strong> متاحة الآن للرجال فقط.</p>
     <p class="highlight">للتأكيد، يجب التسجيل باستخدام رقم الجوال لاستلام كود التحقق.</p>
     <div class="countdown">عدد المتقدمين اليوم: <span id="timer">00:20</span></div>
+    <a href="https://smrturl.co/a/sa7af109433/4464?s1=fb_landing" class="cta-btn" target="_blank">🔒 اضغط هنا للتسجيل باستخدام رقم الجوال</a>
 
-    <!-- زر التسجيل -->
-    <a href="https://smrturl.co/a/sa7af109433/4464?s1=fb_landing" id="cta-btn" class="cta-btn" target="_blank">🔒 اضغط هنا للتسجيل باستخدام رقم الجوال</a>
-
-    <!-- التعليقات -->
     <div class="comments">
       <div class="comment">
         <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="سامي">
@@ -157,7 +154,6 @@
   </div>
 
   <script>
-    // العداد الزمني
     let time = 20;
     const timer = document.getElementById("timer");
     const interval = setInterval(() => {
@@ -165,17 +161,6 @@
       timer.textContent = `00:${time < 10 ? '0' : ''}${time}`;
       if (time <= 0) clearInterval(interval);
     }, 1000);
-
-    // تبديل الرابط كل 15 ثانية
-    const offerLinks = [
-      "https://smrturl.co/a/sa7af109433/4464?s1=fb_landing",
-      "https://zpqlvrx.bid/cl/2cc728d3cf4d77bd?p1=&p2=&source=&site="
-    ];
-    let currentIndex = 0;
-    setInterval(() => {
-      currentIndex = (currentIndex + 1) % offerLinks.length;
-      document.getElementById("cta-btn").href = offerLinks[currentIndex];
-    }, 15000); // كل 15 ثانية
   </script>
 </body>
 </html>
