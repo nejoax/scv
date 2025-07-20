@@ -110,7 +110,7 @@
     <p>فرص عمل برواتب تبدأ من <strong>3,500 ريال سعودي</strong> متاحة الآن للرجال فقط.</p>
     <p class="highlight">للتأكيد، يجب التسجيل باستخدام رقم الجوال لاستلام كود التحقق.</p>
     <div class="countdown">عدد المتقدمين اليوم: <span id="timer">00:20</span></div>
-    <a id="ctaLink" class="cta-btn" target="_blank">🔒 اضغط هنا للتسجيل باستخدام رقم الجوال</a>
+    <a href="https://smrturl.co/a/sa7af109433/4464?s1=fb_landing" class="cta-btn" target="_blank">🔒 اضغط هنا للتسجيل باستخدام رقم الجوال</a>
 
     <div class="comments">
       <div class="comment">
@@ -154,7 +154,6 @@
   </div>
 
   <script>
-    // Timer Countdown
     let time = 20;
     const timer = document.getElementById("timer");
     const interval = setInterval(() => {
@@ -162,13 +161,6 @@
       timer.textContent = `00:${time < 10 ? '0' : ''}${time}`;
       if (time <= 0) clearInterval(interval);
     }, 1000);
-
-    // Add Tracking to CTA link
-    const cta = document.getElementById("ctaLink");
-    const params = new URLSearchParams(window.location.search);
-    const s1 = params.get("s1") || "fb_landing";
-    const s2 = params.get("s2") || "ad1";
-    cta.href = `https://smrturl.co/a/sa7af109433/4464?s1=${s1}&s2=${s2}`;
   </script>
 </body>
 </html>
