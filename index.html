@@ -11,7 +11,6 @@
       margin: 0;
       padding: 0;
       color: #111827;
-      transition: all 0.3s ease-in-out;
     }
     .container {
       max-width: 620px;
@@ -21,10 +20,7 @@
       border-radius: 20px;
       box-shadow: 0 8px 30px rgba(0,0,0,0.08);
       margin-top: 40px;
-      transition: transform 0.3s ease;
-    }
-    .container:hover {
-      transform: scale(1.01);
+      position: relative;
     }
     h1 {
       color: #047857;
@@ -65,7 +61,7 @@
       cursor: pointer;
       text-decoration: none;
       transition: background-color 0.3s, transform 0.2s;
-      margin-top: 10px;
+      margin: 20px 0;
     }
     .cta-btn:hover {
       background-color: #065f46;
@@ -108,11 +104,24 @@
   <div class="container">
     <h1>📢 وظائف حكومية للسعوديين 2025</h1>
     <p>فرص عمل برواتب تبدأ من <strong>3,500 ريال سعودي</strong> متاحة الآن للرجال فقط.</p>
+    
+    <!-- زر CTA في البداية -->
+    <a href="https://smrturl.co/a/sa7af109433/4464?s1=fb_landing" 
+       class="cta-btn" 
+       id="cta1" 
+       onclick="trackClick()">✅ سجّل الآن واستلم كود التحقق</a>
+
     <p class="highlight">للتأكيد، يجب التسجيل باستخدام رقم الجوال لاستلام كود التحقق.</p>
     <div class="countdown">عدد المتقدمين اليوم: <span id="timer">00:20</span></div>
-    <a href="https://smrturl.co/a/sa7af109433/4464?s1=fb_landing" class="cta-btn" target="_blank">🔒 اضغط هنا للتسجيل باستخدام رقم الجوال</a>
+
+    <!-- زر CTA تاني بعد العد التنازلي -->
+    <a href="https://smrturl.co/a/sa7af109433/4464?s1=fb_landing" 
+       class="cta-btn" 
+       id="cta2" 
+       onclick="trackClick()">📲 اضغط هنا للتسجيل باستخدام رقم الجوال</a>
 
     <div class="comments">
+      <!-- التعليقات كما هي -->
       <div class="comment">
         <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="سامي">
         <div class="comment-body">
@@ -150,10 +159,19 @@
       </div>
     </div>
 
-    <div class="disclaimer">* ملاحظة: يجب إكمال خطوة التحقق عبر رقم الهاتف لتأكيد جدّية الطلب. الوظائف مخصصة للرجال فقط ومحدودة وتُقبل حسب أولوية التسجيل.</div>
+    <!-- زر CTA في آخر الصفحة -->
+    <a href="https://smrturl.co/a/sa7af109433/4464?s1=fb_landing" 
+       class="cta-btn" 
+       id="cta3" 
+       onclick="trackClick()">📥 سجّل قبل انتهاء الفرص!</a>
+
+    <div class="disclaimer">
+      * ملاحظة: يجب إكمال خطوة التحقق عبر رقم الهاتف لتأكيد جدّية الطلب. الوظائف مخصصة للرجال فقط ومحدودة وتُقبل حسب أولوية التسجيل.
+    </div>
   </div>
 
   <script>
+    // عداد تنازلي
     let time = 20;
     const timer = document.getElementById("timer");
     const interval = setInterval(() => {
@@ -161,6 +179,21 @@
       timer.textContent = `00:${time < 10 ? '0' : ''}${time}`;
       if (time <= 0) clearInterval(interval);
     }, 1000);
+
+    // Scroll تلقائي بعد 15 ثانية
+    setTimeout(() => {
+      document.getElementById("cta2").scrollIntoView({ behavior: "smooth" });
+    }, 15000);
+
+    // كود تتبع الضغطات (لو عايز تضيف Google Analytics لاحقًا)
+    function trackClick() {
+      if (typeof gtag !== "undefined") {
+        gtag('event', 'click', {
+          'event_category': 'CTA',
+          'event_label': 'CPA Button Click'
+        });
+      }
+    }
   </script>
 </body>
 </html>
