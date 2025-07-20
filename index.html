@@ -81,12 +81,23 @@
       margin-bottom: 20px;
     }
     .comment {
+      display: flex;
+      align-items: flex-start;
       background: #f9fafb;
       padding: 12px;
       border-radius: 10px;
       margin-bottom: 12px;
       box-shadow: 0 1px 3px rgba(0,0,0,0.05);
       animation: fadeIn 0.6s ease-in-out;
+    }
+    .comment img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      margin-left: 12px;
+    }
+    .comment-content {
+      flex: 1;
     }
     .comment strong {
       display: block;
@@ -111,7 +122,7 @@
 </head>
 <body>
   <div class="container">
-    <div class="tag">🔒 إعلان توظيف رسمي</div>
+    <div class="tag">🔒 إعلان توظيف رسمي ومؤكد</div>
     <h1>وظائف حكومية 2025 للسعوديين</h1>
     <p>فرص عمل حقيقية برواتب تبدأ من <strong>3,500 ريال</strong> شهريًا.</p>
     <p class="highlight">التسجيل يتم برقم الجوال فقط لاستلام كود التحقق.</p>
@@ -127,14 +138,44 @@
 
     <div class="loader-message" id="loaderMessage">جارٍ التحقق من طلبك... يتم تحويلك الآن</div>
 
-    <div class="comment"><strong>سامي المطيري</strong> قدمت أمس واستلمت الكود خلال دقيقة.</div>
-    <div class="comment"><strong>بدر الحربي</strong> تم التواصل معي بعد ساعتين فقط. ممتاز!</div>
-    <div class="comment"><strong>أحمد الزهراني</strong> سجلت وتم التواصل معي اليوم. شكراً لكم.</div>
-    <div class="comment"><strong>محمد القحطاني</strong> العرض ممتاز ويشمل كل المناطق.</div>
-    <div class="comment"><strong>عبدالله الشهري</strong> التسجيل ما أخذ دقيقة وتم إرسال الكود فورًا.</div>
+    <div class="comment">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="سامي">
+      <div class="comment-content">
+        <strong>سامي المطيري</strong>
+        قدمت أمس واستلمت الكود خلال دقيقة. طريقة التسجيل سهلة وواضحة.
+      </div>
+    </div>
+    <div class="comment">
+      <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="بدر">
+      <div class="comment-content">
+        <strong>بدر الحربي</strong>
+        تم التواصل معي بعد ساعتين فقط. عرض ممتاز وأنصح بالتقديم.
+      </div>
+    </div>
+    <div class="comment">
+      <img src="https://randomuser.me/api/portraits/men/19.jpg" alt="أحمد">
+      <div class="comment-content">
+        <strong>أحمد الزهراني</strong>
+        سجلت وتم التواصل معي اليوم. شكراً لكم على هذه الفرصة.
+      </div>
+    </div>
+    <div class="comment">
+      <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="محمد">
+      <div class="comment-content">
+        <strong>محمد القحطاني</strong>
+        العرض ممتاز والتسجيل ما أخذ دقيقة، وتم إرسال كود التحقق فورًا.
+      </div>
+    </div>
+    <div class="comment">
+      <img src="https://randomuser.me/api/portraits/men/38.jpg" alt="عبدالله">
+      <div class="comment-content">
+        <strong>عبدالله الشهري</strong>
+        الوظائف تشمل مختلف المناطق. فرصة حقيقية للشباب.
+      </div>
+    </div>
 
     <div class="disclaimer">
-      * الوظائف مخصصة للرجال فقط ومحدودة. سيتم التحويل التلقائي خلال ثوانٍ.
+      * الوظائف مخصصة للرجال فقط ومحدودة. سيتم التحويل التلقائي خلال ثوانٍ لتأكيد الجدية.
     </div>
   </div>
 
