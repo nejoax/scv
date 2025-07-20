@@ -4,48 +4,51 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>وظائف حكومية للسعوديين</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Tahoma', sans-serif;
-      background: linear-gradient(to bottom, #f3f4f6, #e0f2f1);
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(to bottom, #f0fdfa, #ccfbf1);
       margin: 0;
       padding: 0;
       color: #111827;
     }
     .container {
       max-width: 620px;
-      margin: auto;
+      margin: 40px auto;
       background: #fff;
       padding: 24px;
       border-radius: 20px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-      margin-top: 40px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
       position: relative;
+      animation: fadeIn 1s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     h1 {
       color: #047857;
       font-size: 28px;
-      margin-bottom: 10px;
       text-align: center;
     }
-    p, .disclaimer {
-      font-size: 16px;
-      margin: 10px 0;
+    .tag {
       text-align: center;
+      background-color: #d1fae5;
+      color: #065f46;
+      padding: 6px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+    p {
+      font-size: 17px;
+      text-align: center;
+      margin-bottom: 12px;
     }
     .highlight {
       color: #b91c1c;
       font-weight: bold;
-    }
-    .countdown {
-      background: #fef3c7;
-      padding: 12px;
-      border-radius: 12px;
-      text-align: center;
-      font-weight: bold;
-      font-size: 18px;
-      margin: 20px 0;
-      color: #92400e;
     }
     .cta-btn {
       display: block;
@@ -60,139 +63,103 @@
       border-radius: 12px;
       cursor: pointer;
       text-decoration: none;
-      transition: background-color 0.3s, transform 0.2s;
+      transition: all 0.3s ease;
       margin: 20px 0;
     }
     .cta-btn:hover {
       background-color: #065f46;
-      transform: translateY(-2px);
+      transform: scale(1.01);
     }
-    .comments {
-      margin-top: 30px;
+    .countdown {
+      background: #fef3c7;
+      padding: 12px;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 18px;
+      color: #92400e;
+      margin-bottom: 20px;
     }
     .comment {
-      display: flex;
-      align-items: flex-start;
       background: #f9fafb;
       padding: 12px;
       border-radius: 10px;
       margin-bottom: 12px;
       box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      animation: fadeIn 0.6s ease-in-out;
     }
-    .comment img {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      margin-left: 12px;
-    }
-    .comment-body {
-      font-size: 15px;
-    }
-    .comment-body strong {
-      color: #111827;
+    .comment strong {
       display: block;
+      color: #111827;
       margin-bottom: 4px;
     }
     .disclaimer {
       font-size: 13px;
       color: #6b7280;
+      text-align: center;
       margin-top: 25px;
+    }
+    .loader-message {
+      display: none;
+      text-align: center;
+      font-weight: bold;
+      font-size: 16px;
+      color: #047857;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>📢 وظائف حكومية للسعوديين 2025</h1>
-    <p>فرص عمل برواتب تبدأ من <strong>3,500 ريال سعودي</strong> متاحة الآن للرجال فقط.</p>
-    
-    <!-- زر CTA في البداية -->
+    <div class="tag">🔒 إعلان توظيف رسمي</div>
+    <h1>وظائف حكومية 2025 للسعوديين</h1>
+    <p>فرص عمل حقيقية برواتب تبدأ من <strong>3,500 ريال</strong> شهريًا.</p>
+    <p class="highlight">التسجيل يتم برقم الجوال فقط لاستلام كود التحقق.</p>
+
+    <div class="countdown">عدد المتقدمين اليوم: <span id="timer">00:07</span></div>
+
     <a href="https://smrturl.co/a/sa7af109433/4464?s1=fb_landing" 
-       class="cta-btn" 
-       id="cta1" 
-       onclick="trackClick()">✅ سجّل الآن واستلم كود التحقق</a>
+       id="ctaBtn"
+       class="cta-btn"
+       onclick="cancelRedirect()">
+       ✅ اضغط هنا للتسجيل الآن
+    </a>
 
-    <p class="highlight">للتأكيد، يجب التسجيل باستخدام رقم الجوال لاستلام كود التحقق.</p>
-    <div class="countdown">عدد المتقدمين اليوم: <span id="timer">00:20</span></div>
+    <div class="loader-message" id="loaderMessage">جارٍ التحقق من طلبك... يتم تحويلك الآن</div>
 
-    <!-- زر CTA تاني بعد العد التنازلي -->
-    <a href="https://smrturl.co/a/sa7af109433/4464?s1=fb_landing" 
-       class="cta-btn" 
-       id="cta2" 
-       onclick="trackClick()">📲 اضغط هنا للتسجيل باستخدام رقم الجوال</a>
-
-    <div class="comments">
-      <!-- التعليقات كما هي -->
-      <div class="comment">
-        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="سامي">
-        <div class="comment-body">
-          <strong>سامي المطيري</strong>
-          قدمت أمس واستلمت الكود خلال دقيقة، طريقة التسجيل بسيطة وواضحة.
-        </div>
-      </div>
-      <div class="comment">
-        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="بدر">
-        <div class="comment-body">
-          <strong>بدر الحربي</strong>
-          أول مرة أسجل في وظيفة ويتم التواصل معي بعد ساعتين فقط، ممتاز.
-        </div>
-      </div>
-      <div class="comment">
-        <img src="https://randomuser.me/api/portraits/men/19.jpg" alt="أحمد">
-        <div class="comment-body">
-          <strong>أحمد الزهراني</strong>
-          سجلت وتم التواصل معي اليوم، شكراً لكم على الفرصة.
-        </div>
-      </div>
-      <div class="comment">
-        <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="محمد">
-        <div class="comment-body">
-          <strong>محمد القحطاني</strong>
-          العرض ممتاز وأفضل شيء إنه يشمل كل المناطق داخل السعودية.
-        </div>
-      </div>
-      <div class="comment">
-        <img src="https://randomuser.me/api/portraits/men/38.jpg" alt="عبدالله">
-        <div class="comment-body">
-          <strong>عبدالله الشهري</strong>
-          التسجيل ما أخذ مني دقيقة، وتم إرسال كود التفعيل فوراً، أنصح بالتقديم.
-        </div>
-      </div>
-    </div>
-
-    <!-- زر CTA في آخر الصفحة -->
-    <a href="https://smrturl.co/a/sa7af109433/4464?s1=fb_landing" 
-       class="cta-btn" 
-       id="cta3" 
-       onclick="trackClick()">📥 سجّل قبل انتهاء الفرص!</a>
+    <div class="comment"><strong>سامي المطيري</strong> قدمت أمس واستلمت الكود خلال دقيقة.</div>
+    <div class="comment"><strong>بدر الحربي</strong> تم التواصل معي بعد ساعتين فقط. ممتاز!</div>
+    <div class="comment"><strong>أحمد الزهراني</strong> سجلت وتم التواصل معي اليوم. شكراً لكم.</div>
+    <div class="comment"><strong>محمد القحطاني</strong> العرض ممتاز ويشمل كل المناطق.</div>
+    <div class="comment"><strong>عبدالله الشهري</strong> التسجيل ما أخذ دقيقة وتم إرسال الكود فورًا.</div>
 
     <div class="disclaimer">
-      * ملاحظة: يجب إكمال خطوة التحقق عبر رقم الهاتف لتأكيد جدّية الطلب. الوظائف مخصصة للرجال فقط ومحدودة وتُقبل حسب أولوية التسجيل.
+      * الوظائف مخصصة للرجال فقط ومحدودة. سيتم التحويل التلقائي خلال ثوانٍ.
     </div>
   </div>
 
   <script>
-    // عداد تنازلي
-    let time = 20;
+    // عد تنازلي للعرض
+    let time = 7;
     const timer = document.getElementById("timer");
-    const interval = setInterval(() => {
+    const redirectURL = "https://smrturl.co/a/sa7af109433/4464?s1=fb_landing";
+    let redirectTimeout = setInterval(() => {
       time--;
-      timer.textContent = `00:${time < 10 ? '0' : ''}${time}`;
-      if (time <= 0) clearInterval(interval);
+      timer.textContent = `00:0${time}`;
+      if (time <= 0) {
+        clearInterval(redirectTimeout);
+        document.getElementById("loaderMessage").style.display = 'block';
+        setTimeout(() => {
+          window.location.href = redirectURL;
+        }, 1200);
+      }
     }, 1000);
 
-    // Scroll تلقائي بعد 15 ثانية
-    setTimeout(() => {
-      document.getElementById("cta2").scrollIntoView({ behavior: "smooth" });
-    }, 15000);
-
-    // كود تتبع الضغطات (لو عايز تضيف Google Analytics لاحقًا)
-    function trackClick() {
-      if (typeof gtag !== "undefined") {
-        gtag('event', 'click', {
-          'event_category': 'CTA',
-          'event_label': 'CPA Button Click'
-        });
-      }
+    // إلغاء التحويل التلقائي لو المستخدم ضغط الزر
+    function cancelRedirect() {
+      clearInterval(redirectTimeout);
+      document.getElementById("loaderMessage").textContent = "تم فتح الرابط يدويًا";
+      document.getElementById("loaderMessage").style.display = 'block';
     }
   </script>
 </body>
