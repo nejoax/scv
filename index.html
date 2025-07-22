@@ -3,49 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>فرصة عمل حكومية 2025</title>
+  <title>فرص عمل فورية في السعودية</title>
   <style>
     body {
       font-family: 'Tahoma', sans-serif;
-      background: linear-gradient(to bottom, #fff, #fef9c3);
+      background: #f8fafc;
       margin: 0;
       padding: 0;
       color: #111827;
     }
     .container {
-      max-width: 620px;
-      margin: 40px auto;
+      max-width: 640px;
+      margin: auto;
       background: #ffffff;
       padding: 24px;
-      border-radius: 20px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-      position: relative;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+      margin-top: 30px;
     }
-    h1 {
-      color: #b91c1c;
-      font-size: 26px;
-      text-align: center;
-    }
-    p {
-      font-size: 17px;
-      text-align: center;
-    }
-    .warning {
-      background-color: #fef2f2;
-      color: #b91c1c;
-      padding: 15px;
-      border-radius: 12px;
-      font-weight: bold;
-      margin: 20px 0;
-      text-align: center;
-    }
-    .countdown, .viewers {
-      background-color: #fef3c7;
+    .alert-box {
+      background-color: #fff3cd;
+      color: #856404;
+      border: 1px solid #ffeeba;
       padding: 12px;
-      border-radius: 10px;
-      text-align: center;
+      border-radius: 8px;
+      margin: 16px 0;
       font-weight: bold;
-      margin: 10px 0;
+      text-align: center;
+    }
+    .viewers {
+      color: #b91c1c;
+      font-size: 18px;
+      text-align: center;
+      margin-bottom: 10px;
     }
     .cta-btn {
       display: block;
@@ -53,109 +43,117 @@
       padding: 16px;
       background-color: #047857;
       color: white;
-      font-size: 18px;
-      font-weight: bold;
       text-align: center;
-      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
+      border: none;
       border-radius: 12px;
-      transition: background 0.3s;
-      margin-top: 20px;
+      cursor: pointer;
+      text-decoration: none;
+      margin-top: 16px;
     }
     .cta-btn:hover {
       background-color: #065f46;
     }
+    .job-image {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 16px;
+    }
+    .comments-section {
+      margin-top: 30px;
+    }
     .comment {
-      display: flex;
-      align-items: flex-start;
-      background: #f3f4f6;
-      padding: 10px;
+      background: #f1f5f9;
+      padding: 12px;
+      border-radius: 10px;
       margin-bottom: 10px;
-      border-radius: 8px;
     }
-    .comment img {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      margin-left: 10px;
-    }
-    .comment-body {
-      font-size: 14px;
-    }
-    .comment-body strong {
+    .comment strong {
       display: block;
       margin-bottom: 4px;
+      color: #111827;
+    }
+    .disclaimer {
+      font-size: 13px;
+      color: #6b7280;
+      text-align: center;
+      margin-top: 24px;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>🚨 وظائف حكومية للسعوديين والمقيمين 2025</h1>
-    <div class="warning">يجب التسجيل برقم الجوال لاستلام كود التفعيل!</div>
-    <div class="countdown">⏳ عدد المتقدمين اليوم: <span id="counter">00:25</span></div>
-    <div class="viewers">👀 يشاهد الصفحة الآن: <span id="viewers"></span> أشخاص</div>
+    <img src="https://i.imgur.com/7R81rDx.jpg" alt="وظائف السعودية" class="job-image">
+
+    <h2 style="text-align:center; color:#047857;">🚨 فرص عمل عاجلة للسعوديين والمقيمين</h2>
+    <p style="text-align:center; font-size:17px;">مطلوب مندوبين، سائقين، عمال تعبئة ونظافة للعمل فوراً في شركة كبرى داخل المملكة.</p>
+    
+    <div class="alert-box">
+      ⚠️ يجب التسجيل باستخدام رقم الجوال لاستلام كود التحقق!
+    </div>
+
+    <div class="viewers" id="viewer-count">
+      👁️ عدد المشاهدين الآن: <span id="viewers">0</span>
+    </div>
 
     <a href="https://smrturl.co/a/sa7af109433/4464?s1=fb_landing" class="cta-btn" target="_blank">🔒 اضغط هنا للتسجيل واستلام الكود</a>
 
-    <div id="comments"></div>
+    <div class="comments-section" id="comments">
+      <!-- التعليقات تظهر تلقائياً هنا -->
+    </div>
+
+    <div class="disclaimer">* يجب إكمال خطوة التحقق لتأكيد جدّية التسجيل. الفرص محدودة ويتم اختيار المقبولين حسب أولوية التسجيل.</div>
   </div>
 
   <script>
-    const allComments = [
-      { name: "سامي الحربي", img: 11, text: "قدمت واستلمت الكود في دقيقة. شكراً!" },
-      { name: "بدر المطيري", img: 22, text: "العرض ممتاز والتسجيل سهل جداً." },
-      { name: "أحمد الزهراني", img: 13, text: "تم التواصل معي خلال ساعات قليلة." },
-      { name: "عبدالله الشهري", img: 31, text: "أول مرة أشوف عرض صادق فعلاً." },
-      { name: "محمد العتيبي", img: 18, text: "أنصح الكل بالتسجيل، ما أخذ دقيقة!" },
-      { name: "علي القحطاني", img: 44, text: "تواصل سريع وخدمة ممتازة." },
-      { name: "نايف السبيعي", img: 28, text: "عرض حكومي حقيقي!" },
-      { name: "سعيد الشهراني", img: 21, text: "الوظائف متوفرة بكل المدن." },
-      { name: "فهد المالكي", img: 25, text: "مستحيل أضيع الفرصة دي." },
-      { name: "ياسر الزهراني", img: 37, text: "بسيط وسريع وآمن 100%." },
-      { name: "ماجد السهلي", img: 19, text: "الحمد لله تم قبولي." },
-      { name: "تركي الحربي", img: 26, text: "بجد محترمين جداً." },
-      { name: "عبدالإله العسيري", img: 34, text: "تم إرساله مباشرة بعد التسجيل." },
-      { name: "سلطان السهلي", img: 29, text: "تجربة ممتازة جداً." },
-      { name: "عبدالرحمن الفيفي", img: 16, text: "مصداقية عالية بصراحة." },
-      { name: "راكان العنزي", img: 30, text: "يستاهل التجربة." },
-      { name: "نواف القحطاني", img: 32, text: "وصلني الكود فوراً." },
-      { name: "صالح الغامدي", img: 20, text: "التسجيل سريع وفعّال." },
-      { name: "سلمان الجهني", img: 35, text: "خدمة ممتازة والله." },
-      { name: "عادل المطيري", img: 27, text: "شكراً على الفرصة دي." }
+    // مشاهدين عشوائيين
+    const viewers = document.getElementById('viewers');
+    setInterval(() => {
+      viewers.innerText = Math.floor(150 + Math.random() * 50);
+    }, 3000);
+
+    // التعليقات
+    const comments = [
+      { name: \"سامي المطيري\", text: \"سجلت واستلمت الكود فوراً. شكراً للفرصة!\" },
+      { name: \"أحمد الزهراني\", text: \"طريقة التسجيل سهلة جداً، وتم التواصل معي بعد ساعتين.\" },
+      { name: \"بدر الحربي\", text: \"يا جماعة الفرصة حقيقية، سجلت وتواصلوا معي!\" },
+      { name: \"خالد العنزي\", text: \"التسجيل سريع والخطوات واضحة. بالتوفيق للجميع.\" },
+      { name: \"عبدالله الشهري\", text: \"أنا مقيم وتم قبولي! أنصح بالتسجيل فوراً.\" },
+      { name: \"محمد السبيعي\", text: \"بصراحة ما توقعت يردوا علي بسرعة كده!\" },
+      { name: \"ياسر الجهني\", text: \"تم التواصل معايا بعد التسجيل بـ 3 ساعات، تمام جداً.\" },
+      { name: \"صالح المالكي\", text: \"أنا قدمت وجاني الكود في أقل من دقيقة.\" },
+      { name: \"نايف الرويلي\", text: \"الحمد لله تم قبولي، شكراً لكم.\" },
+      { name: \"تركي الحربي\", text: \"بصراحة العرض ممتاز وبدون تعقيدات.\" },
+      { name: \"فهد الشهراني\", text: \"اتصلوا علي بعد التسجيل بيوم. ممتاز!\" },
+      { name: \"راكان العتيبي\", text: \"فيه وظائف حقيقية، سجلت وتم التواصل.\" },
+      { name: \"علي عسيري\", text: \"أنا من جدة وتم قبولي كعامل تعبئة.\" },
+      { name: \"ماجد الغامدي\", text: \"سهل وسريع وأتمنى للجميع التوفيق.\" },
+      { name: \"نواف العتيبي\", text: \"فرصة لا تعوض! سجلت وتم التواصل مباشرة.\" },
+      { name: \"عبدالرحمن الشهري\", text: \"أنا مقيم وتم التواصل معي خلال يوم، شكراً لكم.\" },
+      { name: \"سعد الهذلي\", text: \"وظائف محترمة فعلاً بدون رسوم.\" },
+      { name: \"أنس العمري\", text: \"تم قبولي كعامل نظافة، راتب ممتاز.\" },
+      { name: \"سعيد الحارثي\", text: \"التسجيل ما أخذ دقيقة، بالتوفيق للجميع.\" },
+      { name: \"فيصل الدوسري\", text: \"عرض ممتاز وسهل التقديم.\" }
     ];
 
-    function getRandomComments(count) {
-      const shuffled = [...allComments].sort(() => 0.5 - Math.random());
-      return shuffled.slice(0, count);
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
     }
 
-    const commentsContainer = document.getElementById("comments");
-    function displayComments() {
-      commentsContainer.innerHTML = "";
-      const selected = getRandomComments(4);
-      selected.forEach(c => {
-        commentsContainer.innerHTML += `
-          <div class="comment">
-            <img src="https://randomuser.me/api/portraits/men/${c.img}.jpg" alt="${c.name}" />
-            <div class="comment-body">
-              <strong>${c.name}</strong>
-              ${c.text}
-            </div>
-          </div>`;
-      });
-    }
-    displayComments();
-    setInterval(displayComments, 7000);
+    const commentBox = document.getElementById(\"comments\");
+    const randomComments = shuffle(comments).slice(0, 6);
 
-    let count = 25;
-    const counter = document.getElementById("counter");
-    const viewers = document.getElementById("viewers");
-    function updateCounters() {
-      counter.textContent = `00:${count < 10 ? '0' + count : count}`;
-      viewers.textContent = Math.floor(Math.random() * (80 - 22 + 1)) + 22;
-      count--;
-      if (count < 0) count = 25;
-    }
-    setInterval(updateCounters, 1000);
+    randomComments.forEach(comment => {
+      const el = document.createElement(\"div\");
+      el.className = \"comment\";
+      el.innerHTML = `<strong>${comment.name}</strong>${comment.text}`;
+      commentBox.appendChild(el);
+    });
   </script>
 </body>
 </html>
