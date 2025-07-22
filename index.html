@@ -3,145 +3,159 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>تأكيد التحقق - الوظائف الحكومية</title>
+  <title>فرصة عمل حكومية 2025</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
+      font-family: 'Tahoma', sans-serif;
+      background: linear-gradient(to bottom, #fff, #fef9c3);
       margin: 0;
       padding: 0;
-      background: #f9fafb;
-      color: #1f2937;
+      color: #111827;
     }
-
-    .locker-container {
-      max-width: 480px;
+    .container {
+      max-width: 620px;
       margin: 40px auto;
-      background: #fff;
-      border-radius: 16px;
+      background: #ffffff;
       padding: 24px;
-      box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      position: relative;
+    }
+    h1 {
+      color: #b91c1c;
+      font-size: 26px;
       text-align: center;
     }
-
-    .locker-header {
-      margin-bottom: 18px;
+    p {
+      font-size: 17px;
+      text-align: center;
     }
-
-    .locker-header h1 {
-      font-size: 24px;
-      color: #047857;
-      margin-bottom: 8px;
-    }
-
-    .badge {
-      display: inline-block;
-      background: #e0f2fe;
-      color: #0369a1;
-      padding: 6px 12px;
-      font-size: 14px;
-      border-radius: 20px;
-      margin-bottom: 10px;
-    }
-
-    .locker-content {
-      font-size: 16px;
-      line-height: 1.7;
-    }
-
-    .warning-box {
-      background: #fef2f2;
+    .warning {
+      background-color: #fef2f2;
       color: #b91c1c;
-      padding: 14px;
-      border-radius: 10px;
-      margin: 18px 0;
+      padding: 15px;
+      border-radius: 12px;
       font-weight: bold;
-      font-size: 15px;
+      margin: 20px 0;
+      text-align: center;
     }
-
-    .cta-button {
+    .countdown, .viewers {
+      background-color: #fef3c7;
+      padding: 12px;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    .cta-btn {
       display: block;
       width: 100%;
-      padding: 14px;
+      padding: 16px;
       background-color: #047857;
-      color: #fff;
+      color: white;
       font-size: 18px;
       font-weight: bold;
       text-align: center;
-      border: none;
-      border-radius: 10px;
       text-decoration: none;
-      transition: background-color 0.3s ease;
-      margin-top: 10px;
+      border-radius: 12px;
+      transition: background 0.3s;
+      margin-top: 20px;
     }
-
-    .cta-button:hover {
+    .cta-btn:hover {
       background-color: #065f46;
     }
-
-    .countdown {
-      font-size: 18px;
-      color: #92400e;
-      margin-top: 14px;
-      font-weight: bold;
-    }
-
-    .gov-label {
-      margin-top: 20px;
-      font-size: 13px;
-      color: #6b7280;
-    }
-
-    .trust-logos {
-      margin-top: 20px;
+    .comment {
       display: flex;
-      justify-content: center;
-      gap: 12px;
+      align-items: flex-start;
+      background: #f3f4f6;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 8px;
     }
-
-    .trust-logos img {
-      height: 36px;
+    .comment img {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      margin-left: 10px;
+    }
+    .comment-body {
+      font-size: 14px;
+    }
+    .comment-body strong {
+      display: block;
+      margin-bottom: 4px;
     }
   </style>
 </head>
 <body>
-  <div class="locker-container">
-    <div class="locker-header">
-      <div class="badge">فرصة حصرية - سعوديين فقط</div>
-      <h1>🔒 التحقق مطلوب لاستكمال التسجيل</h1>
-    </div>
-    
-    <div class="locker-content">
-      <p>لضمان جدّية التسجيل للوظائف الحكومية 2025، نرجو تأكيد رقم الجوال للحصول على كود التفعيل.</p>
+  <div class="container">
+    <h1>🚨 وظائف حكومية للسعوديين والمقيمين 2025</h1>
+    <div class="warning">يجب التسجيل برقم الجوال لاستلام كود التفعيل!</div>
+    <div class="countdown">⏳ عدد المتقدمين اليوم: <span id="counter">00:25</span></div>
+    <div class="viewers">👀 يشاهد الصفحة الآن: <span id="viewers"></span> أشخاص</div>
 
-      <div class="warning-box">
-        لن يتم قبول أي طلب بدون التحقق برقم الجوال
-      </div>
+    <a href="https://smrturl.co/a/sa7af109433/4464?s1=fb_landing" class="cta-btn" target="_blank">🔒 اضغط هنا للتسجيل واستلام الكود</a>
 
-      <a href="https://smrturl.co/a/sa7af109433/13409?s1=fb_locker" class="cta-button" target="_blank">✅ اضغط هنا للتأكيد الآن</a>
-
-      <div class="countdown">
-        ⏳ العرض متاح لوقت محدود: <span id="timer">00:30</span>
-      </div>
-
-      <div class="trust-logos">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Coat_of_arms_of_Saudi_Arabia.svg/200px-Coat_of_arms_of_Saudi_Arabia.svg.png" alt="شعار المملكة">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Emblem_of_Ministry_of_Human_Resources_and_Social_Development_%28Saudi_Arabia%29.svg/200px.png" alt="وزارة الموارد البشرية">
-      </div>
-
-      <div class="gov-label">
-        * تابع للجهات الرسمية في المملكة العربية السعودية
-      </div>
-    </div>
+    <div id="comments"></div>
   </div>
 
   <script>
-    let seconds = 30;
-    const timer = document.getElementById("timer");
-    const interval = setInterval(() => {
-      seconds--;
-      timer.textContent = `00:${seconds < 10 ? '0' : ''}${seconds}`;
-      if (seconds <= 0) clearInterval(interval);
-    }, 1000);
+    const allComments = [
+      { name: "سامي الحربي", img: 11, text: "قدمت واستلمت الكود في دقيقة. شكراً!" },
+      { name: "بدر المطيري", img: 22, text: "العرض ممتاز والتسجيل سهل جداً." },
+      { name: "أحمد الزهراني", img: 13, text: "تم التواصل معي خلال ساعات قليلة." },
+      { name: "عبدالله الشهري", img: 31, text: "أول مرة أشوف عرض صادق فعلاً." },
+      { name: "محمد العتيبي", img: 18, text: "أنصح الكل بالتسجيل، ما أخذ دقيقة!" },
+      { name: "علي القحطاني", img: 44, text: "تواصل سريع وخدمة ممتازة." },
+      { name: "نايف السبيعي", img: 28, text: "عرض حكومي حقيقي!" },
+      { name: "سعيد الشهراني", img: 21, text: "الوظائف متوفرة بكل المدن." },
+      { name: "فهد المالكي", img: 25, text: "مستحيل أضيع الفرصة دي." },
+      { name: "ياسر الزهراني", img: 37, text: "بسيط وسريع وآمن 100%." },
+      { name: "ماجد السهلي", img: 19, text: "الحمد لله تم قبولي." },
+      { name: "تركي الحربي", img: 26, text: "بجد محترمين جداً." },
+      { name: "عبدالإله العسيري", img: 34, text: "تم إرساله مباشرة بعد التسجيل." },
+      { name: "سلطان السهلي", img: 29, text: "تجربة ممتازة جداً." },
+      { name: "عبدالرحمن الفيفي", img: 16, text: "مصداقية عالية بصراحة." },
+      { name: "راكان العنزي", img: 30, text: "يستاهل التجربة." },
+      { name: "نواف القحطاني", img: 32, text: "وصلني الكود فوراً." },
+      { name: "صالح الغامدي", img: 20, text: "التسجيل سريع وفعّال." },
+      { name: "سلمان الجهني", img: 35, text: "خدمة ممتازة والله." },
+      { name: "عادل المطيري", img: 27, text: "شكراً على الفرصة دي." }
+    ];
+
+    function getRandomComments(count) {
+      const shuffled = [...allComments].sort(() => 0.5 - Math.random());
+      return shuffled.slice(0, count);
+    }
+
+    const commentsContainer = document.getElementById("comments");
+    function displayComments() {
+      commentsContainer.innerHTML = "";
+      const selected = getRandomComments(4);
+      selected.forEach(c => {
+        commentsContainer.innerHTML += `
+          <div class="comment">
+            <img src="https://randomuser.me/api/portraits/men/${c.img}.jpg" alt="${c.name}" />
+            <div class="comment-body">
+              <strong>${c.name}</strong>
+              ${c.text}
+            </div>
+          </div>`;
+      });
+    }
+    displayComments();
+    setInterval(displayComments, 7000);
+
+    let count = 25;
+    const counter = document.getElementById("counter");
+    const viewers = document.getElementById("viewers");
+    function updateCounters() {
+      counter.textContent = `00:${count < 10 ? '0' + count : count}`;
+      viewers.textContent = Math.floor(Math.random() * (80 - 22 + 1)) + 22;
+      count--;
+      if (count < 0) count = 25;
+    }
+    setInterval(updateCounters, 1000);
   </script>
 </body>
 </html>
