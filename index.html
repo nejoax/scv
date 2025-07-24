@@ -3,164 +3,131 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>وظائف حكومية للسعوديين</title>
+  <title>فرص عمل جديدة في السعودية</title>
   <style>
     body {
       font-family: 'Tahoma', sans-serif;
-      background: linear-gradient(to bottom, #f3f4f6, #e0f2f1);
       margin: 0;
       padding: 0;
+      background: #f1f5f9;
       color: #111827;
-      transition: all 0.3s ease-in-out;
     }
-    .container {
-      max-width: 620px;
-      margin: auto;
+    .locker {
+      max-width: 600px;
+      margin: 40px auto;
       background: #fff;
+      border-radius: 15px;
       padding: 24px;
-      border-radius: 20px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-      margin-top: 40px;
-      transition: transform 0.3s ease;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      position: relative;
     }
-    .container:hover {
-      transform: scale(1.01);
+    .warning {
+      background: #dc2626;
+      color: white;
+      padding: 12px;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 16px;
     }
     h1 {
+      font-size: 24px;
       color: #047857;
-      font-size: 28px;
-      margin-bottom: 10px;
       text-align: center;
     }
-    p, .disclaimer {
+    .sub {
+      text-align: center;
       font-size: 16px;
+      color: #334155;
       margin: 10px 0;
-      text-align: center;
-    }
-    .highlight {
-      color: #b91c1c;
-      font-weight: bold;
-    }
-    .countdown {
-      background: #fef3c7;
-      padding: 12px;
-      border-radius: 12px;
-      text-align: center;
-      font-weight: bold;
-      font-size: 18px;
-      margin: 20px 0;
-      color: #92400e;
     }
     .cta-btn {
       display: block;
-      width: 100%;
-      padding: 16px;
-      background-color: #047857;
+      background: #047857;
       color: white;
+      padding: 14px;
       text-align: center;
-      font-size: 20px;
-      font-weight: bold;
-      border: none;
+      font-size: 18px;
       border-radius: 12px;
-      cursor: pointer;
       text-decoration: none;
-      transition: background-color 0.3s, transform 0.2s;
-      margin-top: 10px;
+      font-weight: bold;
+      margin: 20px 0;
     }
     .cta-btn:hover {
-      background-color: #065f46;
-      transform: translateY(-2px);
+      background: #065f46;
+    }
+    .viewer-count {
+      font-size: 14px;
+      text-align: center;
+      margin-top: 5px;
+      color: #e11d48;
     }
     .comments {
       margin-top: 30px;
     }
     .comment {
-      display: flex;
-      align-items: flex-start;
       background: #f9fafb;
-      padding: 12px;
       border-radius: 10px;
+      padding: 12px;
       margin-bottom: 12px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
     }
-    .comment img {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      margin-left: 12px;
-    }
-    .comment-body {
-      font-size: 15px;
-    }
-    .comment-body strong {
-      color: #111827;
+    .comment strong {
       display: block;
-      margin-bottom: 4px;
-    }
-    .disclaimer {
-      font-size: 13px;
-      color: #6b7280;
-      margin-top: 25px;
+      margin-bottom: 5px;
+      color: #1e293b;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>📢 وظائف حكومية للسعوديين 2025</h1>
-    <p>فرص عمل برواتب تبدأ من <strong>3,500 ريال سعودي</strong> متاحة الآن للرجال فقط.</p>
-    <p class="highlight">للتأكيد، يجب التسجيل باستخدام رقم الجوال لاستلام كود التحقق.</p>
-    <div class="countdown">عدد المتقدمين اليوم: <span id="timer">00:20</span></div>
-    <a href="https://smrturl.co/a/sa7af109433/4464?s1=fb_landing" class="cta-btn" target="_blank">🔒 اضغط هنا للتسجيل باستخدام رقم الجوال</a>
+  <div class="locker">
+    <div class="warning">⚠️ يُرجى التسجيل برقم الجوال لاستلام كود التفعيل!</div>
+    <h1>وظائف للسعوديين والمقيمين برواتب مجزية!</h1>
+    <p class="sub">متاح الآن فرص عمل في كافة أنحاء السعودية للمقيمين والسعوديين برواتب تبدأ من 3500 ريال.</p>
+    <p class="viewer-count">👁️ عدد الزائرين الآن: <span id="viewer-count"></span></p>
+    <a href="https://smrturl.co/a/sa7af109433/4464?s1=fb_landing" class="cta-btn" target="_blank">سجّل الآن واستلم كود التفعيل</a>
 
-    <div class="comments">
-      <div class="comment">
-        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="سامي">
-        <div class="comment-body">
-          <strong>سامي المطيري</strong>
-          قدمت أمس واستلمت الكود خلال دقيقة، طريقة التسجيل بسيطة وواضحة.
-        </div>
-      </div>
-      <div class="comment">
-        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="بدر">
-        <div class="comment-body">
-          <strong>بدر الحربي</strong>
-          أول مرة أسجل في وظيفة ويتم التواصل معي بعد ساعتين فقط، ممتاز.
-        </div>
-      </div>
-      <div class="comment">
-        <img src="https://randomuser.me/api/portraits/men/19.jpg" alt="أحمد">
-        <div class="comment-body">
-          <strong>أحمد الزهراني</strong>
-          سجلت وتم التواصل معي اليوم، شكراً لكم على الفرصة.
-        </div>
-      </div>
-      <div class="comment">
-        <img src="https://randomuser.me/api/portraits/men/12.jpg" alt="محمد">
-        <div class="comment-body">
-          <strong>محمد القحطاني</strong>
-          العرض ممتاز وأفضل شيء إنه يشمل كل المناطق داخل السعودية.
-        </div>
-      </div>
-      <div class="comment">
-        <img src="https://randomuser.me/api/portraits/men/38.jpg" alt="عبدالله">
-        <div class="comment-body">
-          <strong>عبدالله الشهري</strong>
-          التسجيل ما أخذ مني دقيقة، وتم إرسال كود التفعيل فوراً، أنصح بالتقديم.
-        </div>
-      </div>
-    </div>
-
-    <div class="disclaimer">* ملاحظة: يجب إكمال خطوة التحقق عبر رقم الهاتف لتأكيد جدّية الطلب. الوظائف مخصصة للرجال فقط ومحدودة وتُقبل حسب أولوية التسجيل.</div>
+    <div class="comments" id="comments"></div>
   </div>
 
   <script>
-    let time = 20;
-    const timer = document.getElementById("timer");
-    const interval = setInterval(() => {
-      time--;
-      timer.textContent = `00:${time < 10 ? '0' : ''}${time}`;
-      if (time <= 0) clearInterval(interval);
-    }, 1000);
+    const comments = [
+      { name: "سامي المطيري", text: "سجلت واستلمت الكود على طول. ممتاز!" },
+      { name: "أحمد الزهراني", text: "جاني اتصال خلال ساعة. فرصة ممتازة!" },
+      { name: "محمد الحربي", text: "أنا مقيم وسجلت وتم قبولي. شكراً!" },
+      { name: "عبدالله القحطاني", text: "الخطوات واضحة جداً وسهلة." },
+      { name: "خالد الغامدي", text: "فعلاً العرض حقيقي، جربت وسجلت." },
+      { name: "إبراهيم العتيبي", text: "رواتب كويسة والشغل مضمون، لا تفوتوا الفرصة." },
+      { name: "فهد الشهري", text: "أنا مقيم وتم قبولي مباشرة، ممتاز." },
+      { name: "تركي السبيعي", text: "سجلت واستلمت الكود بعد دقيقة فقط." },
+      { name: "ناصر الزهراني", text: "الحمد لله تم قبولي في الوظيفة بسرعة." },
+      { name: "راكان العتيبي", text: "فرصة حقيقية، لا تضيعها." },
+      { name: "خالد السبيعي", text: "تم التواصل معي مباشرة بعد التسجيل." },
+      { name: "سالم الحارثي", text: "شكراً لكم على الوظائف الرائعة!" },
+      { name: "منصور الحربي", text: "أنا سعودي وتم قبولي. التسجيل سهل جداً." },
+      { name: "أنس العتيبي", text: "الكود وصلني مباشرة على الجوال." },
+      { name: "ماجد البقمي", text: "فرص رائعة، أنصح الجميع بالتقديم." }
+    ];
+
+    function shuffle(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    const randomComments = shuffle(comments).slice(0, 6);
+    const commentContainer = document.getElementById("comments");
+    randomComments.forEach(comment => {
+      const div = document.createElement("div");
+      div.className = "comment";
+      div.innerHTML = `<strong>${comment.name}</strong>${comment.text}`;
+      commentContainer.appendChild(div);
+    });
+
+    // Viewer counter (random number between 75-135)
+    document.getElementById("viewer-count").textContent = Math.floor(Math.random() * 61 + 75);
   </script>
 </body>
 </html>
