@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>وظائف حكومية للسعوديين</title>
+  <meta name="description" content="وظائف حكومية برواتب مجزية متاحة الآن للرجال في السعودية. سجل الآن باستخدام رقم الجوال واحصل على فرصتك.">
   <style>
     body {
       font-family: 'Tahoma', sans-serif;
@@ -20,6 +21,10 @@
       border-radius: 20px;
       box-shadow: 0 8px 30px rgba(0,0,0,0.08);
       margin-top: 40px;
+      transition: transform 0.3s ease;
+    }
+    .container:hover {
+      transform: scale(1.01);
     }
     h1 {
       color: #047857;
@@ -46,38 +51,25 @@
       margin: 20px 0;
       color: #92400e;
     }
-    .cta-wrapper {
-      display: flex;
-      gap: 12px;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 15px;
-    }
-    .cta-btn, .messenger-btn {
+    .cta-btn {
+      display: block;
       width: 100%;
       padding: 16px;
+      background-color: #047857;
+      color: white;
       text-align: center;
-      font-size: 18px;
+      font-size: 20px;
       font-weight: bold;
       border: none;
       border-radius: 12px;
+      cursor: pointer;
       text-decoration: none;
-      display: inline-block;
-      transition: all 0.3s ease;
-    }
-    .cta-btn {
-      background-color: #047857;
-      color: #fff;
+      transition: background-color 0.3s, transform 0.2s;
+      margin-top: 10px;
     }
     .cta-btn:hover {
       background-color: #065f46;
-    }
-    .messenger-btn {
-      background-color: #1877f2;
-      color: #fff;
-    }
-    .messenger-btn:hover {
-      background-color: #0e5ed9;
+      transform: translateY(-2px);
     }
     .comments {
       margin-top: 30px;
@@ -89,6 +81,7 @@
       padding: 12px;
       border-radius: 10px;
       margin-bottom: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
     .comment img {
       width: 48px;
@@ -116,12 +109,8 @@
     <h1>📢 وظائف حكومية للسعوديين 2025</h1>
     <p>فرص عمل برواتب تبدأ من <strong>3,500 ريال سعودي</strong> متاحة الآن للرجال فقط.</p>
     <p class="highlight">للتأكيد، يجب التسجيل باستخدام رقم الجوال لاستلام كود التحقق.</p>
-    <div class="countdown">عدد المتقدمين اليوم: <span id="timer">00:20</span></div>
-
-    <div class="cta-wrapper">
-      <a href="https://smrturl.co/a/sa7af109433/4464?s1=fb_landing" class="cta-btn" target="_blank">🔒 اضغط هنا للتسجيل باستخدام رقم الجوال</a>
-      <a href="https://www.facebook.com/share/p/171Fm92AHi/" class="messenger-btn" target="_blank">💬 تحدث معنا على ماسنجر</a>
-    </div>
+    <div class="countdown">سيتم تحويلك تلقائيًا خلال <span id="timer">20</span> ثانية...</div>
+    <a href="https://smrturl.co/a/sa7af109433/4464?s1=fb_landing" class="cta-btn" target="_blank">🔒 اضغط هنا للتسجيل باستخدام رقم الجوال</a>
 
     <div class="comments">
       <div class="comment">
@@ -167,10 +156,15 @@
   <script>
     let time = 20;
     const timer = document.getElementById("timer");
+    const redirectUrl = "https://smrturl.co/a/sa7af109433/4464?s1=fb_landing";
+
     const interval = setInterval(() => {
       time--;
-      timer.textContent = `00:${time < 10 ? '0' : ''}${time}`;
-      if (time <= 0) clearInterval(interval);
+      timer.textContent = time;
+      if (time <= 0) {
+        clearInterval(interval);
+        window.location.href = redirectUrl;
+      }
     }, 1000);
   </script>
 </body>
